@@ -1,27 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Video Call Demo</title>
     <link rel="stylesheet" href="./styles/style.css">
 </head>
+
 <body>
-<h1>
-    Video Call Demo<br><small style="font-size: 14pt">Powered by Agora.io</small>
-</h1>
+    <h1>
+        Video Call Demo<br><small style="font-size: 14pt">Powered by Agora.io</small>
+    </h1>
 
-<p>App id : <input type="text" id="app-id" value=""></p>
-<button id="start">Start</button>
+    <p>App id : <input type="text" id="app-id" value=""></p>
+    <button id="start">Start</button>
 
-<h4>My Feed :</h4>
-<div id="me"></div>
+    <h4>My Feed :</h4>
+    <div id="me"></div>
 
-<h4>Remote Feeds :</h4>
-<div id="remote-container">
+    <h4>Remote Feeds :</h4>
+    <div id="remote-container">
 
-</div>
+    </div>
 
-<script src="scripts/AgoraRTCSDK-2.4.0.js"></script>
-<script src="scripts/script.js"></script>
+    <script src="https://cdn.agora.io/sdk/release/AgoraRTCSDK-3.0.0.js"></script>
+    <script src="scripts/script.js"></script>
 </body>
+
 </html>

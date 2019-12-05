@@ -56,7 +56,7 @@ let userid;
     client.init(appid,() => console.log("AgoraRTC client initialized") ,handleFail);
 
 // The client joins the channel
-    client.join(null,channelid,null, (uid)=>{
+    client.join(null,channelid,String(Date.now()).substr(7), (uid)=>{
         
         var localStream = AgoraRTC.createStream({
             video: true,
