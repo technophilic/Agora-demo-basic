@@ -39,47 +39,6 @@ function removeVideoStream (evt) {
 
 document.getElementById("start").onclick = function () {
 
-// Client Setup
-// Defines a client for RTC
-    let client = AgoraRTC.createClient({
-        mode: 'live',
-        codec: "h264"
-    });
+    //Code here
 
-// Client Setup
-let appid = document.getElementById("app-id").value;
-let channelid="any-channel";
-let userid;
-
-
-// Defines a client for Real Time Communication
-    client.init(appid,() => console.log("AgoraRTC client initialized") ,handleFail);
-
-// The client joins the channel
-    client.join(null,channelid,String(Date.now()).substr(7), (uid)=>{
-        
-        var localStream = AgoraRTC.createStream({
-            video: true,
-            audio: false,
-        });
-        localStream.init(function(){
-            localStream.play('me');
-            client.publish(localStream); // Publish it to the channel
-        });
-        console.log(`App id : ${appid}\nChannel id : ${channelid}\nUser id : ${uid}`);
-
-    },handleFail);
-//When a stream is added to a channel
-    client.on('stream-added', function (evt) {
-        client.subscribe(evt.stream, handleFail);
-    });
-//When you subscribe to a stream
-    client.on('stream-subscribed', function (evt) {
-        let stream = evt.stream;
-        addVideoStream(stream.getId());
-        stream.play(stream.getId());
-    });
-//When a person is removed from the stream
-    client.on('stream-removed',removeVideoStream);
-    client.on('peer-leave',removeVideoStream);
 };
