@@ -6,7 +6,7 @@ h1,h4,p{
 }
 button{
     display: block;
-    margin: 0 auto;
+    margin: 5px auto;
 }
 #remote-container video{
     height: auto;
